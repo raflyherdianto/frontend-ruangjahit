@@ -1,0 +1,282 @@
+@import url('/node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url('/node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('./component/about-us.css');
+@import url('./component/sign-in.css');
+@import url('./component/sign-up.css');
+@import url('./component/product-page.css');
+@import url('./component/product-cart.css');
+@import url('./component/tailor-page.css');
+@import url('./component/favorite-page.css');
+@import url('./component/app-bar.css');
+@import url('./component/detail-product.css');
+@import url('./component/user-profile.css');
+@import url('./component/tailor-profile.css');
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  margin: 0;
+  min-height: 100vh;
+}
+
+
+.hero {
+  background-color: #FF8A00;
+}
+
+.hero-left h1 {
+  font-weight: 900;
+}
+
+.first-main, .second-main, .third-main {
+  padding: 40px;
+}
+
+.first-main h1 {
+  text-align: center;
+  font-weight: 800;
+  color: #FF8A00;
+  margin-bottom: 40px;
+}
+
+.first-main p {
+  font-size: 1.7rem;
+}
+
+.first-main .fm-right span{
+  color: #FF8A00;
+  font-weight: 800;
+}
+
+.second-main {
+  background-color: #FFE1A6;
+}
+
+.second-main .card {
+  width: 17rem;
+  margin-top: 20px;
+}
+
+.second-main h1 {
+  text-align: center;
+  font-weight: 800;
+  color: #272727;
+  margin-bottom: 40px;
+}
+
+.second-main h5 {
+  text-align: center;
+  font-weight: 800;
+  color: #313130;
+}
+
+.second-main a {
+  text-decoration: none;
+  color: #FF8A00;
+  font-weight: 800;
+}
+
+.second-main a:hover {
+  color: #ea7e03;
+}
+
+.third-main button {
+  background-color: #FF8A00;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.third-main button:hover {
+  background-color: #ea7e03;
+}
+
+.third-main h1 {
+  text-align: center;
+  font-weight: 800;
+  color: #FF8A00;
+  margin-bottom: 40px;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+}
+ 
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.second {
+  padding: 50px 36px;
+  background-color: #FFE1A6;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.second h1 {
+  text-align: center;
+  align-items: center;
+  font-size: 2.5em;
+  padding-bottom: 25px;
+}
+
+.sec-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: #FFE1A6;
+}
+
+.sec-img, .sec-body div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec-img img{
+  padding: 16px;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.sec-body div {
+  height: fit-content;
+}
+
+.sec-body div h3 {
+  font-weight: 500;
+  padding: 0 16px;
+}
+
+.sec-body div ul li {
+  font-weight: 500;
+  font-size: 22px;
+  padding: 0 16px;
+}
+
+.sec-body div p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 22px;
+  padding: 8px 16px 20px;
+}
+
+/*
+  Like Button
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.like svg {
+  width: 16px;
+  height: 16px;
+}
+
+.like svg path{
+  fill: #DBDDE5;
+  border: #DBDDE5;
+}
+
+.like-solid svg {
+  width: 16px;
+  height: 16px;
+}
+
+.like-solid svg path{
+  fill: #DBDDE5;
+}
+
+/* Footer */
+.row{
+	display: flex;
+	flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+ul{
+	list-style: none;
+  padding: 0;
+}
+
+.footer{
+	background-color: #fbfbfb;
+  padding-top: 50px;
+}
+
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #000000;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+  margin-right: 0px;
+	font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #FF8A00;
+  width: 55%;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #000000;
+	text-decoration: none;
+	font-weight: 300;
+	color: #000000;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #FF8A00;
+	padding-left: 8px;
+}
+
+.footer-col img {
+  width: 70px;
+  padding: 8px;
+}
+
+/* Footer-Copyright */
+.footer .footer-copyright {
+  text-align: center;
+  color: #000;
+  padding: 10px;
+}

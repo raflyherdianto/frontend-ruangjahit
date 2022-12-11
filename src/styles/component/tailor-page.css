@@ -1,0 +1,257 @@
+.container-tailor {
+    max-width: 100%;
+    padding: 50px;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.container-tailor .show-filter {
+    display: none;
+}
+
+.tailors-content{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.tailor .row {
+    max-width: 100%;
+    margin: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+}
+
+.tailor h5 {
+    margin-top: 10px;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tailor p{
+    color: #000;
+    font-size: small;
+    margin-bottom: 8px;
+}
+
+.tailor .card {
+    max-height: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    width: 12rem;
+}
+
+.tailor .card .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.tailor .card .btn-detail {
+    font-size: 14px;
+    padding: 12px;
+    background-color: #FF8A00;
+	color: #fff;
+	font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.tailor .card .btn-detail:hover {
+    background-color: #F58402;
+}
+
+aside{
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
+aside .category-filter .category-filter-list {
+    margin-bottom: 20px;
+}
+
+aside .category-filter .category-filter-list div {
+    margin-bottom: 10px;
+}
+
+aside h5 {
+    text-align: center;
+    padding: 10px;
+}
+
+aside p {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+aside center {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+aside .checked {
+    color: #fbc02d;
+}
+
+aside .category-filter p,  aside .rate-filter p, aside .location-filter p{
+    background-color: #FF8A00;
+    border-radius: 5px;
+    width: fit-content
+}
+
+aside .location {
+    padding-top: 0;
+}
+
+aside .dropdown-toggle{
+    margin: 0 auto;
+    width: 300px;
+    background-color: #fff;
+    color: #000;
+}
+
+aside .dropdown-toggle:hover{
+    background-color: #f5c58e;
+    color: #000;
+}
+
+aside .dropdown-toggle:active{
+    background-color: #f5c58e;
+    color: #000;
+}
+
+aside .dropdown-menu {
+    width: 300px;
+}
+
+aside input[type="submit"] {
+    margin: 20px 15px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 305px;
+    height: 40px;
+    position: relative;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+/* filter modal */
+#filterTailorModal .modal-content {
+    width: max-content;
+    margin: auto;
+    background-color: #fbf1e5;
+}
+
+#filterTailorModal h5 {
+    margin: auto;
+    font-weight: bold;
+}
+
+#filterTailorModal center {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#filterTailorModal .rate-filter {
+    margin-top: 10px;
+}
+
+#filterTailorModal .category-filter p,  #filterTailorModal .rate-filter p, #filterTailorModal .location-filter p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#filterTailorModal .checked {
+    color: #fbc02d;
+}
+
+#filterTailorModal input[type="submit"] {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {  
+    .tailors-content {
+        gap: 0px;
+        grid-template-columns: 1fr;
+    }
+    
+    .container-tailor {
+        padding: 50px;
+    }
+
+    .container-tailor .show-filter {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .container-tailor .show-filter button {
+        border: none;
+        align-items: center;
+        background-color: white;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .container-tailor .show-filter button:hover {
+        color: #303030;
+    }
+    
+    .container-tailor .show-filter button span {
+        color: #CC704B;
+    }
+
+    aside {
+        display: none;
+    }
+} 
+
+@media screen and (max-width: 768px) {    
+    .tailor .row {
+        grid-template-columns: repeat(3, auto);
+        gap: 20px;
+    }
+} 
+
+@media screen and (max-width: 600px) { 
+    .container-tailor {
+        padding: 20px;
+    }
+
+    .tailor .row {
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+        margin: 0px;
+    }
+} 
+
+@media screen and (max-width: 425px) {  
+    .tailor .row {
+        grid-template-columns: auto;
+        margin: 0px 35px;
+        margin-left: 45px;
+    }
+}
