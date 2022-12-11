@@ -8,7 +8,8 @@
 import Swal from 'sweetalert2';
 import CategoryDataSource from '../../../data/categorydb-source';
 import TailorDataSource from '../../../data/tailordb-source';
-import {createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createProductCategoryTemplate} from '../../templates/template-creator';
+import IndoRegionDataSource from '../../../data/indoregiondb-source';
+import { createProvinceItemTemplate, createRegencyItemTemplate, createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createUserPictureTemplate } from '../../templates/template-creator';
 import UserDataSource from '../../../data/userdb-source';
 
 const TailorProfile = {
@@ -38,12 +39,6 @@ const TailorProfile = {
             <span class="logo_name">RuangJahit</span>
             </div>
             <ul class="nav-links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
-                <a class="">
-                    <i class="bi bi-grid-fill"></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category" aria-selected="true">
                 <a>
                     <i class="bi bi-pie-chart-fill"></i>
@@ -52,20 +47,20 @@ const TailorProfile = {
                 </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addimage" type="button" role="tab" aria-controls="v-pills-addimage" aria-selected="true">
                 <a>
-                    <i class="bi bi-file-text"></i>
+                    <i class="bi bi-file-earmark-image"></i>
                     <span class="links_name">Image Product</span>
                 </a>
                 </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-product" type="button" role="tab" aria-controls="v-pills-product" aria-selected="true">
                 <a>
-                    <i class="bi bi-archive-fill"></i>
+                    <i class="bi bi-box-seam-fill"></i>
                     <span class="links_name">Product</span>
                 </a>
                 </li>
 
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-transaction" type="button" role="tab" aria-controls="v-pills-transaction" aria-selected="true">
                 <a>
-                    <i class="bi bi-archive-fill"></i>
+                    <i class="bi bi-credit-card"></i>
                     <span class="links_name">Transaction</span>
                 </a>
                 </li>
@@ -285,21 +280,16 @@ const TailorProfile = {
                             <input type="text" class="form-control" id="first_address" placeholder="address">
                         </div>
                         <div class="mb-3">
-                            <label for="province_id" class="form-label"><small>Provinsi</small></label>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Provinsi</option>
-                            <option id="province_id" name="province_id" value="11">ACEH</option>
-                            <option id="province_id" name="province_id" value="12">SUMATERA UTARA</option>
-                            <option id="province_id" name="province_id" value="13">SUMATERA BARAT</option>
+                            <label for="edit_profile_id" class="form-label"><small>Pilih Provinsi</small></label>
+                            <select class="form-select mb-1" id="edit_profile_id" aria-label="Default select example">
+                            <option selected>Pilih Provinsi</option>
                             </select>
                         </div>
+
                         <div class="mb-3">
-                            <label for="regency_id" class="form-label"><small>Kabupaten/Kota</small></label>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Kabupaten</option>
-                            <option id="regency_id" name="regency_id" value="1101">KABUPATEN SIMEULUE</option>
-                            <option id="regency_id" name="regency_id" value="1102">KABUPATEN ACEH SINGKIL</option>
-                            <option id="regency_id" name="regency_id" value="1103">KABUPATEN ACEH SELATAN</option>
+                            <label for="edit_regency_id" class="form-label"><small>Pilih Kota</small></label>
+                            <select class="form-select" id="edit_regency_id" aria-label="Default select example">
+                            <option selected>Pilih Kota</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -534,8 +524,19 @@ const TailorProfile = {
     const userContainer = document.querySelector('#user_name');
     userContainer.innerHTML += createTailorDetailTemplate(user);
 
-    // const photoContainer = document.querySelector('#profile_picture');
-    // photoContainer.innerHTML += createUserPictureTemplate(user);
+    const provinces = await IndoRegionDataSource.getAllProvince();
+    const regencies = await IndoRegionDataSource.getAllRegencies();
+    const provinceContainer = document.querySelector('#edit_profile_id');
+    const regencyContainer = document.querySelector('#edit_regency_id');
+    provinces.forEach((province) => {
+      provinceContainer.innerHTML += createProvinceItemTemplate(province);
+    });
+    regencies.forEach((regency) => {
+      regencyContainer.innerHTML += createRegencyItemTemplate(regency);
+    });
+
+    const photoContainer = document.querySelector('#profile_picture');
+    photoContainer.innerHTML += createUserPictureTemplate(user);
   },
 
 };
